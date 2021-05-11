@@ -1,5 +1,6 @@
 "use strict";
 
+console.log("this is a message from the AMD module, version 1.0.3");
 const e = React.createElement;
 
 class LikeButton extends React.Component {
