@@ -4,6 +4,10 @@
     await sleep(100);
   }
 
+  const useState = React.useState;
+
+  const e = React.createElement;
+
   function getHeaders() {
     return {
       "Content-Type": "application/json",
