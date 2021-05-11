@@ -1,0 +1,19 @@
+{
+  "name": "dan-test-abc123",
+  "version": "1.0.1",
+  "description": "just a test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danisaza/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danisaza/test/issues"
+  },
+  "homepage": "https://github.com/danisaza/test#readme"
+}
