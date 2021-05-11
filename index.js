@@ -1,35 +1,25 @@
-// Uses AMD or browser globals to create a module.
+"use strict";
 
-// If you want something that will also work in Node, see returnExports.js
-// If you want to support other stricter CommonJS environments,
-// or if you need to create a circular dependency, see commonJsStrict.js
+const e = React.createElement;
 
-// Defines a module "amdWeb" that depends on another module called "b".
-// Note that the name of the module is implied by the file name. It is best
-// if the file name and the exported global have matching names.
-
-// If the 'b' module also uses this type of boilerplate, then
-// in the browser, it will create a global .b that is used below.
-
-// If you do not want to support the browser global path, then you
-// can remove the `root` use and the passing of `this` as the first arg to
-// the top function.
-
-(function (root, factory) {
-  if (typeof define === "function" && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(["b"], factory);
-  } else {
-    // Browser globals
-    root.amdWeb = factory(root.b);
+class LikeButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { liked: false };
   }
-})(typeof self !== "undefined" ? self : this, function (b) {
-  // Use b in some fashion.
 
-  // Just return a value to define the module export.
-  // This example returns an object, but the module
-  // can return a function as the exported value.
-  return () => {
-    console.log("This is a message from the AMD module.");
-  };
-});
+  render() {
+    if (this.state.liked) {
+      return "You liked this.";
+    }
+
+    return e(
+      "button",
+      { onClick: () => this.setState({ liked: true }) },
+      "Like"
+    );
+  }
+}
+
+const domContainer = document.querySelector("#like_button_container");
+ReactDOM.render(e(LikeButton), domContainer);
