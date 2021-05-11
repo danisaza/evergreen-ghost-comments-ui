@@ -172,15 +172,36 @@
     }
 
     return (
-      <div className="mx-20">
+      <div
+        className="mx-20"
+        style={{ display: "flex", flexDirection: "column" }}
+      >
         {!postData ? (
           <span>Loading...</span>
         ) : (
           postData.post.comments.map((comment) => (
-            <div key={comment.id}>
-              <div>
+            <div
+              key={comment.id}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                marginBottom: "25px",
+                paddingLeft: "10px",
+                borderLeft: "2px solid #ccc",
+                padding: "10px",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "row" }}>
                 {comment.author.avatar_url ? (
-                  <img src={comment.author.avatar_url} />
+                  <img
+                    src={comment.author.avatar_url}
+                    style={{
+                      height: "36px",
+                      width: "36px",
+                      borderRadius: "10px",
+                      backgroundColor: "#55efc4",
+                    }}
+                  />
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -195,16 +216,34 @@
                     />
                   </svg>
                 )}
-                <div>
-                  <div>
-                    <div>{comment.author.username}</div>
-                    <div>{dayjs().to(comment.created_at)}</div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "100%",
+                  }}
+                >
+                  <div style={{ marginLeft: "10px" }}>
+                    <div style={{ fontWeight: "bold", color: "#555" }}>
+                      {comment.author.username}
+                    </div>
+                    <div style={{ color: "#aaa" }}>
+                      {dayjs().to(comment.created_at)}
+                    </div>
                   </div>
                   {postData.member.id == comment.author.id ? (
                     commentsSaving.includes(comment.id) ? (
                       <div>Please wait...</div>
                     ) : (
-                      <div>
+                      <div
+                        style={{
+                          alignSelf: "flex-start",
+                          marginLeft: "25px",
+                          display: "flex",
+                          cursor: "pointer",
+                          color: "#CCC",
+                        }}
+                      >
                         <a
                           onClick={(e) => {
                             setEditedText(comment.text);
@@ -218,6 +257,10 @@
                             e.preventDefault();
                             deleteComment(comment.id);
                           }}
+                          style={{
+                            marginLeft: "10px",
+                            cursor: "pointer",
+                          }}
                         >
                           Delete
                         </a>
@@ -226,13 +269,26 @@
                   ) : null}
                 </div>
               </div>
-              <div>
+              <div
+                style={{
+                  marginTop: "5px",
+                  width: "100%",
+                }}
+              >
                 {commentEditing == comment.id ? (
                   <div>
                     <textarea
                       type="textarea"
                       value={editedText}
                       onChange={(e) => setEditedText(e.target.value)}
+                      style={{
+                        width: "100%",
+                        resize: "vertical",
+                        fontFamily: "inherit",
+                        fontSize: "inherit",
+                        padding: "4px",
+                        height: "auto",
+                      }}
                     />
                     <button
                       onClick={() => {
