@@ -1,1 +1,1 @@
-# Evergreen Ghost Comments React
+# Evergreen Ghost Comments UI
