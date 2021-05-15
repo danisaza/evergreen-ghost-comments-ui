@@ -1,19 +1,19 @@
 {
-  "name": "dan-test-abc123",
-  "version": "1.0.8",
-  "description": "just a test",
+  "name": "evergreen-ghost-comments-ui",
+  "version": "0.0.1",
+  "description": "Frontend code for Evergreen Comments on Ghost blogs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danisaza/test.git"
+    "url": "git+https://github.com/danisaza/evergreen-ghost-comments-ui.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/danisaza/test/issues"
+    "url": "https://github.com/danisaza/evergreen-ghost-comments-ui/issues"
   },
-  "homepage": "https://github.com/danisaza/test#readme"
+  "homepage": "https://github.com/danisaza/evergreen-ghost-comments-ui#readme"
 }

@@ -327,6 +327,10 @@
     );
   };
 
+  if (!Evergreen || !Evergreen.memberId) {
+    return null;
+  }
+
   const domContainer = document.querySelector("#evergreen-comments-container");
   ReactDOM.render(e(EvergreenComments), domContainer);
 })();
