@@ -2,7 +2,7 @@
   "name": "evergreen-ghost-comments-ui",
   "version": "0.0.2",
   "description": "Frontend code for Evergreen Comments on Ghost blogs",
-  "main": "build/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
